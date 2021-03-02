@@ -1,0 +1,4 @@
+{
+  "baseURL": "https://tf0veeqo94.execute-api.ap-south-1.amazonaws.com/dev/",
+  "prodBaseUrl": "https://tf0veeqo94.execute-api.ap-south-1.amazonaws.com/dev/"
+}

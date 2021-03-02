@@ -1,0 +1,136 @@
+.ui.vertical.divider:before {
+  height: 100%;
+}
+.ui.vertical.divider:after {
+  height: 100%;
+}
+.close-but {
+  display: flex;
+  justify-content: flex-end;
+  //   padding-right: 10px;
+  // cursor: pointer;
+  // float: right;
+  margin: 10px;
+  height: 40px;
+}
+.tableData {
+  font-weight: normal;
+}
+.number {
+  text-align: right;
+  display: flex !important;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.countTable {
+  //   margin-left: 60px !important;
+  margin-bottom: 20px !important;
+  width: 70% !important;
+}
+.update-but {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px !important;
+  //   padding-right: 10px;
+  margin: 10px;
+  span {
+    padding-right: 1.5%;
+  }
+}
+.datePicker {
+  margin-top: 70px;
+  margin-left: 5px;
+  display: flex;
+  align-items: flex-end;
+  h4 {
+    font-size: 15px;
+    margin-right: 45px;
+    line-height: 10px;
+  }
+}
+.tableCell-button {
+  margin-left: 30px;
+  cursor: pointer;
+  color: #2c85d0;
+}
+.tableCell-button:hover {
+  margin-left: 30px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.updateMsg {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.loader-Container {
+  margin: 10px !important;
+  height: 60vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.removeBottomBorder {
+  border-bottom: none !important;
+  // display: flex;
+}
+.count-table {
+  margin-left: 0px !important;
+  font-size: 14px;
+}
+.countHead {
+  display: flex;
+  justify-content: space-between;
+}
+.tableInput {
+  border: none;
+  outline: none;
+  width: 60px;
+  background-color: #f9fafb;
+  border-bottom: 0.5px solid rgba(105, 104, 104, 0.404);
+  text-align: right;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+.validate-error {
+  color: red;
+  font-size: 10px;
+}
+.noDataContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+}
+.buttonUpdate {
+  background-color: transparent;
+  border: none;
+  color: #2c85d0;
+  cursor: pointer;
+  outline: none;
+}
+.buttonUpdate:hover {
+  text-decoration: underline;
+}
+.buttonUpdate:disabled {
+  color: #5a5b5c;
+  cursor: default;
+}
+.buttonUpdate:disabled:hover {
+  text-decoration: none;
+}
+.flexEnd {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.edit-but {
+  background-color: #2c85d0;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+}

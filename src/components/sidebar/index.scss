@@ -1,0 +1,85 @@
+.sidebar {
+  width: 25vw;
+  border-right: solid 0.1px rgba(172, 170, 170, 0.534);
+  height: 84vh;
+  justify-content: left;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+// .sidebar::-webkit-scrollbar {
+//   display: none;
+// }
+// .sidebar:hover::-webkit-scrollbar{
+//   display: block;
+// }
+.searchBox {
+  position: sticky;
+  padding-top: 10px;
+  top: 0px;
+  height: 60px;
+  width: 25vw;
+  background-color: white;
+  padding-bottom: 10px;
+}
+.input-box {
+  display: flex;
+  justify-content: center;
+  .box-content {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    width: 22vw;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 5px;
+    .icon-x {
+      color: rgba(34, 36, 38, 0.555);
+      cursor: pointer;
+      height: 38px;
+      display: flex;
+      align-items: center;
+    }
+    .icon-s {
+      color: rgba(34, 36, 38, 0.541);
+      height: 38px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  input {
+    border: none;
+    height: 38px;
+    width: 19vw;
+    outline: none;
+  }
+  input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(34, 36, 38, 0.555);
+    opacity: 0.5;
+    font-size: 14px;
+  }
+}
+.listHead {
+  font-size: 14px;
+  color: black;
+  font-weight: normal;
+  text-align: left;
+}
+.ui.list {
+  margin: 0 !important;
+}
+.label {
+  z-index: -10 !important;
+}
+.list-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+// .loader-Container {
+//   height: 80vh !important;
+//   display: flex;
+//   align-content: center;
+//   justify-content: center;
+// }

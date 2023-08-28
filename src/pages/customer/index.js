@@ -18,8 +18,10 @@ const Plan = () => {
   const [searchValue, setSearchValue] = useState(null);
   const [searchBy, setSearchBy] = useState("phone");
   const [loader, setLoader] = useState(false);
-  const setCompany = (company) => {
+  const [create, setCreate] = useState(false);
+  const setCompany = (company, newCustomer = false) => {
     setOpen(true);
+    setCreate(newCustomer);
     setSelectedCompany(company);
   };
   const search = (e) => {
@@ -64,7 +66,7 @@ const Plan = () => {
           } else {
             database
               .ref("customers/")
-              .orderByChild(searchBy)
+              .orderByChild("name")
               .startAt(searchValue.toUpperCase())
               .endAt(searchValue.toUpperCase() + "\uf8ff")
               .once("value")
@@ -79,6 +81,7 @@ const Plan = () => {
                   setLoader(false);
                   setFilteredCompanyList(temp);
                 } else {
+                  toast.error("No Customer Found");
                   setSearchValue("");
                   setLoader(false);
                 }
@@ -129,8 +132,6 @@ const Plan = () => {
   console.log(companyList);
   return (
     <div>
-      <Header />
-      <MenuBar activeItem="customer" />
       <div className="main">
         <ToastContainer
           position="top-center"
@@ -160,6 +161,7 @@ const Plan = () => {
               setOpen={setOpen}
               selectedCompany={selectedCompany}
               getCustomerList={getCustomerList}
+              createCustomer={create}
             />
           )}
         </div>

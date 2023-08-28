@@ -53,7 +53,7 @@ const Login = () => {
                   childSnapshot.val().phone === password
                 ) {
                   setLoading(false);
-                  localStorage.setItem("token", "BearerToken");
+                  localStorage.setItem("token", childSnapshot.key);
                   history.push("/home");
                 } else {
                   setErr("Email or Password Incorrect");

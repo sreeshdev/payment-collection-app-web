@@ -18,7 +18,7 @@ const SideBar = ({
             <Icon name="search" className="icon-s" />
             <input
               type="text"
-              placeholder="Search Customer"
+              placeholder="Search Customer By Name/Phone"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyPress={(e) => searchCompany(e)}
@@ -28,6 +28,14 @@ const SideBar = ({
             )}
           </div>
         </div>
+        <button
+          class="ui labeled icon primary button"
+          style={{ marginTop: "10px" }}
+          onClick={() => setCompany({}, true)}
+        >
+          <i class="add icon"></i>
+          Add Customer
+        </button>
         {/* <Input
           className="input-box"
           icon="search"

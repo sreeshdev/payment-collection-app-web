@@ -129,7 +129,6 @@ const Plan = () => {
         setLoader(false);
       });
   };
-  console.log(companyList);
   return (
     <div>
       <div className="main">

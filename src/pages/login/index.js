@@ -35,7 +35,6 @@ const Login = () => {
       .signInWithEmailAndPassword(Email, password)
       .then((res) => {
         // let temp = [];
-        console.log(res);
         const user = auth.currentUser;
         database
           .ref("employees/")
@@ -43,10 +42,8 @@ const Login = () => {
           .equalTo(Email.toLowerCase())
           .once("value")
           .then((snapshot) => {
-            console.log(snapshot);
             if (snapshot.val() !== null) {
               snapshot.forEach((childSnapshot, index) => {
-                console.log(childSnapshot.val());
                 // temp.push({ key: childSnapshot.key, ...childSnapshot.val() });
                 if (
                   childSnapshot.val().email === Email.toLowerCase() &&

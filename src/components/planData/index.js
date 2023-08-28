@@ -68,7 +68,6 @@ const PlanData = ({
       });
   }, []);
   useEffect(() => {
-    console.log("!!", selectedCompany);
     if (open && createCustomer) {
       setIsLoading(true);
       setIsEdit(true);
@@ -92,8 +91,9 @@ const PlanData = ({
       setNewData(selectedCompany);
       setIsLoading(false);
       setActive(selectedCompany?.isActive);
-      setDefaultPackages(selectedCompany?.packages?.map(({ id }) => id));
-      setAmount(selectedCompany?.amount);
+      let packageIds = selectedCompany?.packages?.map(({ id }) => id);
+      setDefaultPackages(packageIds);
+      setSelectedPackageId(packageIds);
       // getAdminDetail();
     }
   }, [open, selectedCompany, createCustomer]);
@@ -106,7 +106,7 @@ const PlanData = ({
       toast.error("All fields are required!");
       return;
     }
-    setUpdateLoad(true);
+
     database
       .ref("customers")
       .push({
@@ -120,7 +120,7 @@ const PlanData = ({
         phone: newData.phone,
         name: newData.name,
         barCode: newData.barCode,
-        isActive: newData.isActive,
+        isActive: isActive,
       })
       .then((snapshot) => {
         setUpdateLoad(false);
@@ -129,6 +129,7 @@ const PlanData = ({
         setIsEdit(false);
         setIsCreate(false);
         onCloseModal();
+        toast.success("Customer Created Successfully");
       })
       .catch((err) => {
         console.log(err);
@@ -142,20 +143,21 @@ const PlanData = ({
         office: newData.office,
         serial: newData.serial,
         no: newData.no,
-        packages: newData.packages,
-        amount: newData.amount,
+        packages: selectedPackages,
+        amount: amount,
         city: newData.city,
         locality: newData.locality,
         phone: newData.phone,
         name: newData.name,
         barCode: newData.barCode,
-        isActive: newData.isActive,
+        isActive: isActive,
       })
       .then((snapshot) => {
         setUpdateLoad(false);
         setAdminData(newData);
         getCustomerList();
         setIsEdit(false);
+        toast.success("Customer Updated Successfully");
       })
       .catch((err) => {
         console.log(err);
@@ -168,6 +170,7 @@ const PlanData = ({
       .remove()
       .then(() => {
         setUpdateLoad(false);
+        toast.success("Customer Deleted Successfully");
       });
   };
   const onCloseModal = () => {
@@ -242,6 +245,7 @@ const PlanData = ({
                           value={newData.barCode}
                           name="barCode"
                           onChange={(e) => handleInputChange(e)}
+                          className="inputs"
                         />
                       ) : (
                         <Header as="h5">

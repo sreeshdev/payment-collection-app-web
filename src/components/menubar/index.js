@@ -4,7 +4,6 @@ import { Menu, Segment } from "semantic-ui-react";
 
 const MenuBar = () => {
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <div>
       <Menu pointing secondary style={{ paddingLeft: "10px" }}>
